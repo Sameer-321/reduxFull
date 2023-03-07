@@ -20,7 +20,7 @@ function PostsList() {
     if (postsStatus === "idle") {
       dispatch(fetchPosts());
     }
-    // console.log(posts)
+    
   }, [postsStatus, dispatch]);
 
   let content;
@@ -30,7 +30,7 @@ function PostsList() {
     const orderedPosts = posts
       .slice()
       .sort((a, b) => b.date.localeCompare(a.date));
-      //console.log(orderedPosts)
+    //console.log(orderedPosts)
     content = orderedPosts.map((post) => (
       <PostsExcerpt key={post.id} post={post} />
     ));
